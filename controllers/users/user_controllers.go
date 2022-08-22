@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	// "github.com/preet/bookstore-oauth-go/Oauth"
 	"github.com/preet/bookstore_users-api/domain/users"
 	"github.com/preet/bookstore_users-api/services"
 	"github.com/preet/bookstore_users-api/utils/errors"
@@ -35,6 +36,10 @@ func Create(c *gin.Context) {
 }
 
 func Get(c *gin.Context) {
+	// if err := Oauth.AuthenticateRequest(); err != nil {
+	// 	c.JSON(err.status, err)
+	// 	return
+	// }
 	userId, idErr := getUserId(c.Param("user_id"))
 	if idErr != nil {
 		c.JSON(idErr.Status, idErr)
@@ -96,4 +101,18 @@ func Search(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, users.Marshall(c.GetHeader("X-Public") == "true"))
+}
+func Login(c *gin.Context) {
+	var request users.LoginRequest
+	if err := c.ShouldBindJSON(&request); err != nil {
+		restErr := errors.NewBadRequestError("invalid json body")
+		c.JSON(restErr.Status, restErr)
+		return
+	}
+	user, err := services.UsersService.LoginUser(request)
+	if err != nil {
+		c.JSON(err.Status, err)
+		return
+	}
+	c.JSON(http.StatusOK, user.Marshall(c.GetHeader("X-Public") == "true"))
 }

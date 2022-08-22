@@ -1,6 +1,7 @@
 package app
 
 import (
+	// "../bookstore-oauth-go/oauth"
 	"github.com/gin-gonic/gin"
 	"github.com/preet/bookstore_users-api/logger"
 )
@@ -13,4 +14,5 @@ func StartApplication() {
 	mapUrls()
 	logger.Info("about to start the application")
 	router.Run("localhost:8080")
+
 }
