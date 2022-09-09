@@ -2,7 +2,8 @@ package app
 
 import (
 	// "../bookstore-oauth-go/oauth"
-	"github.com/PreetSIngh8929/bookstore_users-api/logger"
+
+	"github.com/PreetSIngh8929/boookstore_utils-go/logger"
 	"github.com/gin-gonic/gin"
 )
 

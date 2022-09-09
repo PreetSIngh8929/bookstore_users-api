@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/PreetSIngh8929/bookstore-oauth-go v0.0.0-20220826051856-64a10e163146 // indirect
-	github.com/PreetSIngh8929/boookstore_utils-go v0.0.0-20220829083114-643af2541dba // indirect
+	github.com/PreetSIngh8929/boookstore_utils-go v0.0.0-20220909082520-e0fae178aaf6 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.8.1 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
@@ -22,7 +22,7 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
-	go.uber.org/zap v1.22.0 // indirect
+	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97 // indirect
 	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect
 	golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069 // indirect

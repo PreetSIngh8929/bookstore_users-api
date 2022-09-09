@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"log"
 
-	_ "github.com/go-sql-driver/mysql"
+	"github.com/PreetSIngh8929/boookstore_utils-go/logger"
+	// "github.com/go-sql-driver/mysql"
+	"github.com/go-sql-driver/mysql"
+	// _ "github.com/go-sql-driver/mysql"
 )
 
 // const (
@@ -34,5 +37,6 @@ func init() {
 	if err = Client.Ping(); err != nil {
 		panic(err)
 	}
+	mysql.SetLogger(logger.GetLogger())
 	log.Println("database connection established")
 }
